@@ -52,22 +52,36 @@ export default function HorizontalServices() {
     const trackEl = track.current;
     if (!wrapEl || !trackEl) return;
 
-    const ctx = gsap.context(() => {
-      const total = trackEl.scrollWidth - window.innerWidth;
-      gsap.to(trackEl, {
-        x: -total,
-        ease: "none",
-        scrollTrigger: {
-          trigger: wrapEl,
-          start: "top top",
-          end: () => `+=${total}`,
-          pin: true,
-          scrub: 1,
-          invalidateOnRefresh: true,
-        },
-      });
-    }, wrap);
-    return () => ctx.revert();
+    const getTotal = () => trackEl.scrollWidth - window.innerWidth;
+
+    const tween = gsap.to(trackEl, {
+      x: () => -getTotal(),
+      ease: "none",
+      scrollTrigger: {
+        trigger: wrapEl,
+        start: "top top",
+        end: () => `+=${getTotal()}`,
+        pin: true,
+        scrub: 1,
+        invalidateOnRefresh: true,
+        anticipatePin: 1,
+      },
+    });
+
+    // Force refresh once layout + images settle so pin distance is correct
+    const doRefresh = () => ScrollTrigger.refresh();
+    const t1 = window.setTimeout(doRefresh, 400);
+    const t2 = window.setTimeout(doRefresh, 1500);
+    if (document.fonts?.ready) document.fonts.ready.then(doRefresh);
+    window.addEventListener("load", doRefresh);
+
+    return () => {
+      window.clearTimeout(t1);
+      window.clearTimeout(t2);
+      window.removeEventListener("load", doRefresh);
+      tween.scrollTrigger?.kill();
+      tween.kill();
+    };
   }, []);
 
   return (
