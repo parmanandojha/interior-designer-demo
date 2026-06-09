@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { background: #f4f0ea; color: #0a0a0a; }
+body {
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 15px;
+  line-height: 1.2;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+/* Editorial serif — refined tracking for luxury feel */
+.font-serif { letter-spacing: -0.005em; font-weight: 400; }
+.text-display { letter-spacing: -0.025em; }
+.text-section, .text-hero { letter-spacing: -0.02em; }
+.text-card { letter-spacing: -0.01em; }
+
+/* Refined eyebrow */
+.eyebrow { font-weight: 500; font-size: 11px; letter-spacing: 0.16em; }
+
+/* Body lead paragraph */
+p { line-height: 1.2; }
+
+::selection { background: #0a0a0a; color: #f4f0ea; }
+
+.grid-12 { display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1.25rem; }
+@media (min-width: 1024px) { .grid-12 { gap: 1.5rem; } }
+
+.shell { padding-left: 1.5rem; padding-right: 1.5rem; }
+@media (min-width: 768px) { .shell { padding-left: 2.5rem; padding-right: 2.5rem; } }
+@media (min-width: 1280px) { .shell { padding-left: 3.5rem; padding-right: 3.5rem; } }
+
+.eyebrow { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; }
+
+.hover-fade a, .hover-fade button { transition: opacity .35s ease; }
+.hover-fade:hover a, .hover-fade:hover button { opacity: 0.4; }
+.hover-fade a:hover, .hover-fade button:hover { opacity: 1; }
+
+.marquee { display: flex; overflow: hidden; gap: 4rem; white-space: nowrap; }
+.marquee-track { display: flex; gap: 4rem; animation: marquee 40s linear infinite; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 1s cubic-bezier(.22,1,.36,1), transform 1s cubic-bezier(.22,1,.36,1);
+  will-change: opacity, transform;
+}
+.reveal.is-in { opacity: 1; transform: translateY(0); }
+
+.split-line {
+  display: block;
+  overflow: hidden;
+  /* Give descenders (g, y, p) room without altering visual rhythm */
+  padding-bottom: 0.3em;
+  margin-bottom: -0.2em;
+}
+.split-line > span {
+  display: block;
+  transform: translateY(120%);
+  transition: transform 1.1s cubic-bezier(.16,1,.3,1);
+  will-change: transform;
+}
+.split-line.is-in > span { transform: translateY(0); }
+
+.hairline { border-color: rgba(10,10,10,0.12); }
+
+.btn-arrow { display: inline-flex; align-items: center; gap: 0.6rem; }
+.btn-arrow .dot { width: 6px; height: 6px; border-radius: 9999px; background: #0a0a0a; }
+
+.img-frame { position: relative; overflow: hidden; background: #1a1a1a; }
+.img-frame img { transition: transform 1.2s cubic-bezier(.2,.7,.2,1); }
+.img-frame:hover img { transform: scale(1.04); }
