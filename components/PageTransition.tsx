@@ -1,17 +1,23 @@
 "use client";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export default function PageTransition({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const [firstPath] = useState(pathname);
+  const hasMounted = useRef(false);
   const curtain = useRef<HTMLDivElement | null>(null);
   const content = useRef<HTMLDivElement | null>(null);
   const timers = useRef<number[]>([]);
   const rafs = useRef<number[]>([]);
 
   useEffect(() => {
-    if (pathname === firstPath) return;
+    // Skip on first mount (initial page load) — but play on EVERY subsequent
+    // path change, including returning to the path the user originally landed on.
+    if (!hasMounted.current) {
+      hasMounted.current = true;
+      return;
+    }
     const cur = curtain.current;
     const c = content.current;
     if (!cur || !c) return;
@@ -49,8 +55,20 @@ export default function PageTransition({ children }: { children: React.ReactNode
           c.style.opacity = "1";
           c.style.transform = "translateY(0)";
         }, 560);
-
         timers.current.push(t1);
+
+        // After the content fade-in completes, clear inline transform/transition
+        // so the wrapper doesn't become a transformed ancestor — that would
+        // break `position: fixed` and kill ScrollTrigger pins (e.g. horizontal
+        // services on the homepage). Then refresh ScrollTrigger to re-measure.
+        const t2 = window.setTimeout(() => {
+          c.style.transition = "";
+          c.style.transform = "";
+          c.style.opacity = "";
+          cur.style.transition = "";
+          ScrollTrigger.refresh();
+        }, 560 + 850);
+        timers.current.push(t2);
       });
       rafs.current.push(r2);
     });
@@ -62,7 +80,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
       rafs.current.forEach((r) => window.cancelAnimationFrame(r));
       rafs.current = [];
     };
-  }, [pathname, firstPath]);
+  }, [pathname]);
 
   return (
     <>

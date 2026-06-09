@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Reveal from "@/components/Reveal";
 import SplitText from "@/components/SplitText";
 import Parallax from "@/components/Parallax";
@@ -22,13 +22,92 @@ type View = "list" | "grid";
 export default function WorkPage() {
   const [view, setView] = useState<View>("list");
   const [filter, setFilter] = useState<string>("All");
+  const [hovered, setHovered] = useState<string | null>(null);
+  const hoverRef = useRef<HTMLDivElement | null>(null);
 
   const filters = ["All", "Residential", "Studio", "Retail", "Adaptive Reuse", "Architecture", "Interior"];
   const visible = filter === "All" ? projects : projects.filter((p) => p.type === filter);
+  const featured = projects[0];
+
+  const onListMouseMove = (e: React.MouseEvent) => {
+    const el = hoverRef.current;
+    if (!el) return;
+    // offset so the preview floats to the right of the cursor
+    el.style.transform = `translate3d(${e.clientX + 24}px, ${e.clientY - 160}px, 0)`;
+  };
 
   return (
     <>
-      <section className="shell pt-48 pb-12">
+      {/* FLOATING HOVER PREVIEW (list view only) */}
+      <div
+        ref={hoverRef}
+        className="hidden lg:block fixed top-0 left-0 z-40 pointer-events-none will-change-transform transition-opacity duration-300 ease-out"
+        style={{
+          transform: "translate3d(-9999px,-9999px,0)",
+          opacity: hovered && view === "list" ? 1 : 0,
+        }}
+        aria-hidden
+      >
+        <div className="relative w-[320px] h-[400px] overflow-hidden rounded-sm bg-ink/0 shadow-2xl">
+          {projects.map((p) => (
+            <div
+              key={p.id}
+              className="absolute inset-0 transition-opacity duration-500 ease-out"
+              style={{ opacity: hovered === p.id && view === "list" ? 1 : 0 }}
+            >
+              <Image
+                src={p.img}
+                alt=""
+                fill
+                sizes="320px"
+                className="object-cover"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* FEATURED PROJECT */}
+      <section className="shell pt-40 pb-20">
+        <Reveal>
+          <p className="eyebrow opacity-60 mb-6">— Featured · Spring 2026</p>
+        </Reveal>
+        <Link href={`/work/${featured.id}`} className="block group">
+          <Reveal>
+            <div className="relative w-full aspect-[16/9] rounded-sm overflow-hidden bg-ink">
+              <Image
+                src={featured.img}
+                alt={featured.title}
+                fill
+                className="object-cover transition-transform duration-[1400ms] group-hover:scale-[1.03]"
+                priority
+                sizes="100vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/55 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 lg:p-14 text-bone">
+                <div className="grid-12 items-end">
+                  <div className="col-span-12 lg:col-span-8">
+                    <p className="eyebrow opacity-80 mb-4">
+                      {featured.type} · {featured.location}
+                    </p>
+                    <h2
+                      className="font-serif group-hover:italic transition-all"
+                      style={{ fontSize: "clamp(2rem, 5vw, 5rem)", lineHeight: 1, letterSpacing: "-0.035em" }}
+                    >
+                      {featured.title}
+                    </h2>
+                  </div>
+                  <div className="col-span-12 lg:col-span-4 lg:text-right mt-6 lg:mt-0 eyebrow opacity-80">
+                    {featured.year} &nbsp;·&nbsp; View project →
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </Link>
+      </section>
+
+      <section className="shell pt-4 pb-12">
         <div className="grid-12 items-end">
           <div className="col-span-12 lg:col-span-8">
             <Reveal y={20}>
@@ -126,10 +205,15 @@ export default function WorkPage() {
                 <span className="col-span-2 md:col-span-1 text-right">Year</span>
               </div>
             </Reveal>
-            <ul>
+            <ul
+              onMouseMove={onListMouseMove}
+              onMouseLeave={() => setHovered(null)}
+            >
               {visible.map((p, i) => (
                 <Reveal key={p.id} delay={i * 0.04}>
-                  <li>
+                  <li
+                    onMouseEnter={() => setHovered(p.id)}
+                  >
                     <Link
                       href={`/work/${p.id}`}
                       className="grid-12 items-center py-5 border-b hairline group"

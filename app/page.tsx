@@ -8,6 +8,7 @@ import StickyScene from "@/components/StickyScene";
 import HorizontalServices from "@/components/HorizontalServices";
 import ProcessIndex from "@/components/ProcessIndex";
 import HeroSlideshow from "@/components/HeroSlideshow";
+import TextTestimonials from "@/components/TextTestimonials";
 
 const projects = [
   { slug: "atherton", title: "Atherton Pavilion", location: "Atherton, CA", year: "2025", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80", tag: "Residential" },
@@ -52,6 +53,9 @@ export default function Home() {
       <section className="mt-40">
         <Marquee items={["Komposition", "Lyddesign", "Speak", "Materialitet", "Lys"]} />
       </section>
+
+      {/* TESTIMONIAL — TEXT (above services, draggable carousel) */}
+      <TextTestimonials />
 
       {/* SERVICES — horizontal scroll-pinned */}
       <section className="mt-40">
@@ -128,6 +132,121 @@ export default function Home() {
         </div>
 
         <ProcessIndex />
+      </section>
+
+      {/* TESTIMONIAL — VIDEO (below process) */}
+      <section className="shell mt-56">
+        <div className="grid-12 mb-12 items-end">
+          <Reveal className="col-span-12 lg:col-span-6">
+            <p className="eyebrow opacity-60 mb-6">— Testimonial · 02 / 02</p>
+            <SplitText as="h2" className="font-serif text-section">
+              {"In their own words."}
+            </SplitText>
+          </Reveal>
+          <Reveal className="col-span-12 lg:col-span-4 lg:col-start-9" delay={0.1}>
+            <p className="text-sm opacity-80 max-w-sm">
+              A short film from the Skud fra Studiet team — three years in,
+              looking back at the move from concept to studio.
+            </p>
+          </Reveal>
+        </div>
+
+        {/* Horizontal reel row — scrolls sideways on mobile, fits in row on desktop */}
+        <div className="-mx-6 md:-mx-10 lg:-mx-14 px-6 md:px-10 lg:px-14 overflow-x-auto scroll-smooth snap-x snap-mandatory">
+          <ul className="flex gap-4 md:gap-5 lg:gap-6">
+            {[
+              {
+                src: "https://cdn.coverr.co/videos/coverr-cozy-living-room-2018/1080p.mp4",
+                poster: "/hero/01.jpg",
+                handle: "@elena.m",
+                project: "Atherton Pavilion",
+                duration: "01:48",
+                quote: "They listened first, drew second.",
+                name: "Elena Martín",
+                role: "Homeowner",
+              },
+              {
+                src: "https://cdn.coverr.co/videos/coverr-cozy-living-room-2018/1080p.mp4",
+                poster: "/hero/02.jpg",
+                handle: "@skudfrastudiet",
+                project: "Skud fra Studiet",
+                duration: "02:14",
+                quote: "Hard decisions felt easy.",
+                name: "Anders Lund",
+                role: "Founder",
+              },
+              {
+                src: "https://cdn.coverr.co/videos/coverr-cozy-living-room-2018/1080p.mp4",
+                poster: "/hero/03.jpg",
+                handle: "@baumiller",
+                project: "Baumiller's Warehouse",
+                duration: "03:02",
+                quote: "A warehouse, finally at rest.",
+                name: "Theo Baumiller",
+                role: "Owner",
+              },
+              {
+                src: "https://cdn.coverr.co/videos/coverr-cozy-living-room-2018/1080p.mp4",
+                poster: "/hero/04.jpg",
+                handle: "@echo.park",
+                project: "Echo Park House",
+                duration: "01:35",
+                quote: "Light I didn't know I had.",
+                name: "Mara Cho",
+                role: "Homeowner",
+              },
+            ].map((r, i) => (
+              <Reveal
+                key={r.handle}
+                as="li"
+                delay={i * 0.08}
+                className="shrink-0 snap-start w-[78vw] sm:w-[56vw] md:w-[44vw] lg:w-[calc((100%-1.25rem*3)/4)]"
+              >
+                <figure className="relative aspect-[9/16] rounded-sm overflow-hidden bg-ink group cursor-pointer shadow-xl">
+                  <video
+                    className="absolute inset-0 w-full h-full object-cover"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    poster={r.poster}
+                  >
+                    <source src={r.src} type="video/mp4" />
+                  </video>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-transparent to-black/15 pointer-events-none" />
+
+                  {/* Play indicator */}
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <span className="flex items-center justify-center w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-bone/90 text-ink transition-transform duration-500 group-hover:scale-110">
+                      <svg width="14" height="16" viewBox="0 0 22 24" aria-hidden>
+                        <path d="M0 0 L22 12 L0 24 Z" fill="currentColor" />
+                      </svg>
+                    </span>
+                  </div>
+
+                  {/* Caption — reel style */}
+                  <figcaption className="absolute bottom-0 left-0 right-0 p-4 lg:p-5 text-bone">
+                    <p
+                      className="font-serif italic mb-3"
+                      style={{ fontSize: "clamp(0.95rem, 1vw, 1.1rem)", lineHeight: 1.25 }}
+                    >
+                      “{r.quote}”
+                    </p>
+                    <div className="flex items-end justify-between gap-3">
+                      <div>
+                        <p className="eyebrow opacity-85">{r.handle}</p>
+                        <p className="text-[11px] opacity-70 mt-1">
+                          {r.name} · {r.role}
+                        </p>
+                      </div>
+                      <span className="eyebrow opacity-70 shrink-0">{r.duration}</span>
+                    </div>
+                  </figcaption>
+                </figure>
+              </Reveal>
+            ))}
+          </ul>
+        </div>
       </section>
 
       {/* NEWS */}
