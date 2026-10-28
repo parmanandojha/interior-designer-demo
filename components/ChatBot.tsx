@@ -26,9 +26,23 @@ export default function ChatBot() {
   const [typing, setTyping] = useState(false);
   const [mode, setMode] = useState<"chat" | "lead" | "done">("chat");
   const [lead, setLead] = useState<Lead>({ name: "", email: "", phone: "", note: "" });
+  const [teaser, setTeaser] = useState(false);
+  const [teaserDismissed, setTeaserDismissed] = useState(false);
 
   const scrollRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Nudge first-time visitors who haven't opened Mini yet.
+  useEffect(() => {
+    if (open || teaserDismissed) return;
+    const t = setTimeout(() => setTeaser(true), 4000);
+    return () => clearTimeout(t);
+  }, [open, teaserDismissed]);
+
+  // Hide the teaser once the panel is opened.
+  useEffect(() => {
+    if (open) setTeaser(false);
+  }, [open]);
 
   // keep the latest message in view
   useEffect(() => {
@@ -92,7 +106,7 @@ export default function ChatBot() {
 
   const submitLead = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!lead.name.trim() || !lead.email.trim()) return;
+    if (!lead.name.trim() || !lead.email.trim() || !lead.phone.trim()) return;
     // Demo: no backend — surface the captured lead for wiring later.
     console.log("[Mini] call request:", lead);
     setMode("done");
@@ -100,6 +114,43 @@ export default function ChatBot() {
 
   return (
     <>
+      {/* Teaser — nudges visitors who haven't opened Mini */}
+      <div
+        className="fixed bottom-20 right-5 z-[60] max-w-[240px] origin-bottom-right"
+        style={{
+          transform: teaser && !open ? "translateY(0) scale(1)" : "translateY(8px) scale(0.96)",
+          opacity: teaser && !open ? 1 : 0,
+          pointerEvents: teaser && !open ? "auto" : "none",
+          transition: "transform 0.4s cubic-bezier(.22,1,.36,1), opacity 0.3s ease",
+        }}
+        aria-hidden={!teaser || open}
+      >
+        <div className="relative flex items-start gap-2.5 rounded-2xl rounded-br-sm border border-ink/10 bg-bone px-3.5 py-3 shadow-xl shadow-ink/15">
+          <span className="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-ink text-bone font-serif text-sm leading-none">
+            M
+          </span>
+          <button
+            type="button"
+            onClick={() => setOpen(true)}
+            className="text-left text-sm leading-snug"
+          >
+            Hey — can I help you?
+          </button>
+          <button
+            type="button"
+            aria-label="Dismiss"
+            onClick={(e) => {
+              e.stopPropagation();
+              setTeaser(false);
+              setTeaserDismissed(true);
+            }}
+            className="ml-1 -mr-1 -mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full text-ink/40 transition-colors hover:bg-ink/5 hover:text-ink"
+          >
+            ×
+          </button>
+        </div>
+      </div>
+
       {/* Launcher */}
       <button
         type="button"
@@ -175,9 +226,11 @@ export default function ChatBot() {
                   required
                 />
                 <LeadInput
-                  placeholder="Phone (optional)"
+                  placeholder="Phone"
+                  type="tel"
                   value={lead.phone}
                   onChange={(v) => setLead((l) => ({ ...l, phone: v }))}
+                  required
                 />
                 <textarea
                   rows={2}
