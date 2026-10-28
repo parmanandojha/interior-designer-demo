@@ -22,6 +22,7 @@ import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 import Preloader from "@/components/Preloader";
 import PageTransition from "@/components/PageTransition";
+import ChatBot from "@/components/ChatBot";
 
 export const metadata: Metadata = {
   title: "Noma — Interior & Architecture Studio",
@@ -41,6 +42,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main>{children}</main>
           <Footer />
         </PageTransition>
+        <ChatBot />
       </body>
     </html>
   );
