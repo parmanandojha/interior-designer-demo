@@ -23,7 +23,7 @@ export const articles: Article[] = [
     readTime: "5 min read",
     author: "Noma Editorial",
     cover:
-      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=2200&q=80",
+      "/projects/atherton/01.jpg",
     body: [
       "Atherton, California has long been a quiet test bed for how the American west handles density, drought and fire risk. This spring, Noma joins eight other studios on the town's newly-formed Optimization Council — a six-month residency aimed at rewriting how new residential builds account for material sourcing and embodied carbon.",
       "The council's first project is a public dataset. Every approved permit in Atherton from 2010 onwards will be re-coded against a standard taxonomy: where the lumber came from, where the steel was rolled, what fraction of the slab is locally-sourced cement. Once the dataset exists, the harder work begins: turning it into a tool that architects can actually use during early-stage design.",
@@ -34,7 +34,7 @@ export const articles: Article[] = [
       "If we can get the data into the architect's first sketch instead of the contractor's last bid, we've moved the needle.",
     inlineImages: [
       {
-        src: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=2000&q=80",
+        src: "/projects/atherton/02.jpg",
         caption: "Atherton, looking south from the new pavilion site.",
         afterParagraph: 1,
       },
@@ -50,7 +50,7 @@ export const articles: Article[] = [
     readTime: "4 min read",
     author: "Noma Editorial",
     cover:
-      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=2200&q=80",
+      "/projects/skud/03.jpg",
     body: [
       "Noma will spend the next two years embedded inside First Street, the climate-risk data company, leading the design of a new generation of consumer-facing tools. The partnership begins with a redesigned home-buyer dashboard, due to launch in late 2026.",
       "First Street's data has been quietly powering risk ratings on Zillow and Redfin since 2021. The next step is direct: a stand-alone consumer product that lets prospective buyers understand a property's flood, fire, wind, heat and air exposure at the parcel level, in plain language.",
@@ -58,7 +58,7 @@ export const articles: Article[] = [
     ],
     inlineImages: [
       {
-        src: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=2000&q=80",
+        src: "/projects/echo/02.jpg",
         caption: "Coastal exposure modelling, Southern California.",
         afterParagraph: 1,
       },
@@ -74,7 +74,7 @@ export const articles: Article[] = [
     readTime: "8 min read",
     author: "Sara Lindqvist",
     cover:
-      "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=2200&q=80",
+      "/projects/echo/02.jpg",
     body: [
       "Most studios pick materials by feel, by reference, by the bid that came in under budget. The honest answer is that ninety percent of the time the choice is fine. The honest answer is also that the other ten percent are getting harder to predict.",
       "Northern European spruce — the workhorse of mid-budget residential joinery for thirty years — is now five-to-eight percent more expensive than it was in 2022, with that price reflecting both supply constraints from the 2023 bark-beetle outbreak and the new EU deforestation regulation. The trend is not reversing. By 2030, the standard reference texts on softwood sourcing will need to be substantially rewritten.",
@@ -93,7 +93,7 @@ export const articles: Article[] = [
     readTime: "3 min read",
     author: "Noma Editorial",
     cover:
-      "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=2200&q=80",
+      "/projects/warehouse/01.jpg",
     body: [
       "Today we're publishing a refreshed portfolio: three new projects, an updated identity, and a slightly different way of presenting the work. The change is small but deliberate. We wanted the projects to read as stories, not as catalogues.",
       "The three new additions are the Atherton Pavilion, Baumiller's Warehouse, and Skud fra Studiet. Each one has its own dedicated page, with the brief, the photographs, the specs and the credits in one place. The full archive sits below.",

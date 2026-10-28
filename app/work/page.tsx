@@ -7,14 +7,14 @@ import SplitText from "@/components/SplitText";
 import Parallax from "@/components/Parallax";
 
 const projects = [
-  { id: "atherton", title: "Atherton Pavilion", year: "2025", type: "Residential", location: "Atherton, CA", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80" },
-  { id: "skud", title: "Skud fra Studiet", year: "2024", type: "Studio", location: "Copenhagen, DK", img: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1600&q=80" },
-  { id: "warehouse", title: "Baumiller's Warehouse", year: "2024", type: "Adaptive Reuse", location: "Brooklyn, NY", img: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1600&q=80" },
-  { id: "echo", title: "Echo Park House", year: "2023", type: "Residential", location: "Los Angeles, CA", img: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1600&q=80" },
-  { id: "noma-flagship", title: "Noma Flagship", year: "2023", type: "Retail", location: "Tokyo, JP", img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1600&q=80" },
-  { id: "lyd", title: "Lyddesign Loft", year: "2022", type: "Interior", location: "Aarhus, DK", img: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1600&q=80" },
-  { id: "highline", title: "Highline Pied-à-Terre", year: "2022", type: "Residential", location: "New York, NY", img: "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=1600&q=80" },
-  { id: "garden", title: "Glasshouse Garden", year: "2021", type: "Architecture", location: "Ojai, CA", img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1600&q=80" },
+  { id: "atherton", title: "Atherton Pavilion", year: "2025", type: "Residential", location: "Atherton, CA", img: "/projects/atherton/01.jpg" },
+  { id: "skud", title: "Skud fra Studiet", year: "2024", type: "Studio", location: "Copenhagen, DK", img: "/projects/skud/01.jpg" },
+  { id: "warehouse", title: "Baumiller's Warehouse", year: "2024", type: "Adaptive Reuse", location: "Brooklyn, NY", img: "/projects/warehouse/01.jpg" },
+  { id: "echo", title: "Echo Park House", year: "2023", type: "Residential", location: "Los Angeles, CA", img: "/projects/echo/01.jpg" },
+  { id: "noma-flagship", title: "Noma Flagship", year: "2023", type: "Retail", location: "Tokyo, JP", img: "/projects/skud/03.jpg" },
+  { id: "lyd", title: "Lyddesign Loft", year: "2022", type: "Interior", location: "Aarhus, DK", img: "/projects/skud/05.jpg" },
+  { id: "highline", title: "Highline Pied-à-Terre", year: "2022", type: "Residential", location: "New York, NY", img: "/projects/warehouse/03.jpg" },
+  { id: "garden", title: "Glasshouse Garden", year: "2021", type: "Architecture", location: "Ojai, CA", img: "/projects/atherton/05.jpg" },
 ];
 
 type View = "list" | "grid";

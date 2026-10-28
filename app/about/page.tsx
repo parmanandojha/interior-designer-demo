@@ -23,7 +23,7 @@ export default function AboutPage() {
       <section className="shell mt-40">
         <Parallax className="aspect-[16/8] rounded-sm bg-ink" amount={140}>
           <Image
-            src="https://images.unsplash.com/photo-1567016376408-0226e4d0c1ea?w=2000&q=80"
+            src="/projects/atherton/01.jpg"
             alt="Studio interior"
             fill
             className="object-cover"
@@ -76,8 +76,8 @@ export default function AboutPage() {
               title: "The library",
               body: "Walls of references — books, fabric swatches, stone offcuts. Every project begins here. We pull, sit, argue, and start drawing.",
               images: [
-                "https://images.unsplash.com/photo-1481277542470-605612bd2d61?w=1400&q=80",
-                "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1200&q=80",
+                "/projects/skud/01.jpg",
+                "/projects/skud/04.jpg",
               ],
             },
             {
@@ -85,8 +85,8 @@ export default function AboutPage() {
               title: "The model room",
               body: "Cardboard, basswood, foam. Half-finished massing studies and a small CNC. Big screens are for clients — the work happens at the table.",
               images: [
-                "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1400&q=80",
-                "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=1200&q=80",
+                "/projects/warehouse/04.jpg",
+                "/projects/warehouse/07.jpg",
               ],
             },
             {
@@ -94,8 +94,8 @@ export default function AboutPage() {
               title: "The garden",
               body: "Coffee in the morning, presentations in the afternoon. Most of the best decisions Noma has made were made outside, under the jacaranda.",
               images: [
-                "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1400&q=80",
-                "https://images.unsplash.com/photo-1510798831971-661eb04b3739?w=1200&q=80",
+                "/projects/echo/01.jpg",
+                "/projects/echo/03.jpg",
               ],
             },
           ]}

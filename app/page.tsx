@@ -11,10 +11,10 @@ import HeroSlideshow from "@/components/HeroSlideshow";
 import TextTestimonials from "@/components/TextTestimonials";
 
 const projects = [
-  { slug: "atherton", title: "Atherton Pavilion", location: "Atherton, CA", year: "2025", img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1600&q=80", tag: "Residential" },
-  { slug: "skud", title: "Skud fra Studiet", location: "Copenhagen, DK", year: "2024", img: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=1600&q=80", tag: "Studio" },
-  { slug: "warehouse", title: "Baumiller's Warehouse", location: "Brooklyn, NY", year: "2024", img: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1600&q=80", tag: "Adaptive Reuse" },
-  { slug: "atherton", title: "Echo Park House", location: "Los Angeles, CA", year: "2023", img: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1600&q=80", tag: "Residential" },
+  { slug: "atherton", title: "Atherton Pavilion", location: "Atherton, CA", year: "2025", img: "/projects/atherton/01.jpg", tag: "Residential" },
+  { slug: "skud", title: "Skud fra Studiet", location: "Copenhagen, DK", year: "2024", img: "/projects/skud/01.jpg", tag: "Studio" },
+  { slug: "warehouse", title: "Baumiller's Warehouse", location: "Brooklyn, NY", year: "2024", img: "/projects/warehouse/01.jpg", tag: "Adaptive Reuse" },
+  { slug: "echo", title: "Echo Park House", location: "Los Angeles, CA", year: "2023", img: "/projects/echo/01.jpg", tag: "Residential" },
 ];
 
 export default function Home() {
@@ -266,28 +266,28 @@ export default function Home() {
               t: "Noma joins the Atherton Optimization council",
               d: "Mar 21, 2026",
               cat: "Press Release",
-              img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=900&q=80",
+              img: "/projects/atherton/01.jpg",
             },
             {
               slug: "first-street-partnership",
               t: "First Street announces design partnership",
               d: "Feb 14, 2026",
               cat: "Partnership",
-              img: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=900&q=80",
+              img: "/projects/skud/03.jpg",
             },
             {
               slug: "material-sourcing",
               t: "Climate-adjusted projections for material sourcing",
               d: "Feb 02, 2026",
               cat: "Journal",
-              img: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=900&q=80",
+              img: "/projects/atherton/05.jpg",
             },
             {
               slug: "2026-portfolio-refresh",
               t: "Releases — 2026 portfolio refresh",
               d: "Jan 18, 2026",
               cat: "Release",
-              img: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=900&q=80",
+              img: "/projects/warehouse/01.jpg",
             },
           ].map((n, i) => (
             <Reveal

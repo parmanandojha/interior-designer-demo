@@ -7,28 +7,28 @@ const steps = [
     title: "Discover",
     body: "Long conversations, site walks, references. We listen for the life the space needs to hold, not just the rooms it will contain.",
     deliverables: ["Brief", "Site survey", "Mood board"],
-    img: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=1200&q=80",
+    img: "/projects/warehouse/01.jpg",
   },
   {
     n: "02",
     title: "Define",
     body: "We translate the brief into a clear design intent — palette, materials, scope, and budget — so the rest of the work pulls in one direction.",
     deliverables: ["Concept", "Palette", "Budget plan"],
-    img: "https://images.unsplash.com/photo-1486718448742-163732cd1544?w=1200&q=80",
+    img: "/projects/skud/05.jpg",
   },
   {
     n: "03",
     title: "Design",
     body: "Plans, elevations, lighting, joinery, soft goods. We test full-scale where it matters. Detail by detail, the space becomes inevitable.",
     deliverables: ["Plans", "Materials", "Lighting"],
-    img: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80",
+    img: "/projects/atherton/03.jpg",
   },
   {
     n: "04",
     title: "Deliver",
     body: "We oversee the build, style the final rooms, and walk you through the keys. Even after handover, the studio stays close.",
     deliverables: ["Build oversight", "Styling", "Handover"],
-    img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80",
+    img: "/projects/atherton/01.jpg",
   },
 ];
 

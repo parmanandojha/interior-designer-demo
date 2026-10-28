@@ -20,7 +20,7 @@ export const projects: Project[] = [
     year: "2025",
     type: "Residential",
     location: "Atherton, California",
-    cover: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=2200&q=80",
+    cover: "/projects/atherton/01.jpg",
     intro:
       "Two glass pavilions lift on concrete plinths above a meadow, giving the rear of the lot the illusion of structures hovering over the landscape. Materials return to the site at either end, tying the new architecture to the older grove.",
     body: [
@@ -32,21 +32,21 @@ export const projects: Project[] = [
       "We didn't want the house to feel like an event. We wanted it to feel like the lot had always anticipated it.",
     gallery: [
       {
-        src: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=2000&q=80",
+        src: "/projects/atherton/02.jpg",
         ratio: "wide",
         caption: "South elevation, evening light.",
       },
       {
-        src: "https://images.unsplash.com/photo-1615874959474-d609969a20ed?w=1200&q=80",
+        src: "/projects/atherton/03.jpg",
         ratio: "portrait",
         caption: "Bronze stair detail.",
       },
       {
-        src: "https://images.unsplash.com/photo-1618219740975-d40978bb7378?w=1200&q=80",
+        src: "/projects/atherton/04.jpg",
         ratio: "portrait",
       },
       {
-        src: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=2000&q=80",
+        src: "/projects/atherton/05.jpg",
         ratio: "wide",
         caption: "Living pavilion, morning.",
       },
@@ -74,7 +74,7 @@ export const projects: Project[] = [
     year: "2024",
     type: "Studio",
     location: "Copenhagen, Denmark",
-    cover: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=2200&q=80",
+    cover: "/projects/skud/01.jpg",
     intro:
       "A working studio for a Danish recording artist, carved out of a former rope factory on the Refshaleøen waterfront. The brief: a single quiet room for writing, surrounded by the noise of the harbour.",
     body: [
@@ -84,15 +84,15 @@ export const projects: Project[] = [
     pullQuote: "We left the brick alone. Then we built a quiet house inside it.",
     gallery: [
       {
-        src: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=2000&q=80",
+        src: "/projects/skud/02.jpg",
         ratio: "wide",
       },
       {
-        src: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=80",
+        src: "/projects/skud/04.jpg",
         ratio: "portrait",
       },
       {
-        src: "https://images.unsplash.com/photo-1565182999561-18d7dc61c393?w=1200&q=80",
+        src: "/projects/skud/06.jpg",
         ratio: "portrait",
       },
     ],
@@ -117,7 +117,7 @@ export const projects: Project[] = [
     year: "2024",
     type: "Adaptive Reuse",
     location: "Brooklyn, New York",
-    cover: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=2200&q=80",
+    cover: "/projects/warehouse/05.jpg",
     intro:
       "A 1908 paint warehouse in Greenpoint converted into a single residence over two floors. The structure stays; everything else is new.",
     body: [
@@ -127,15 +127,15 @@ export const projects: Project[] = [
     pullQuote: "We added one stair. The building did the rest.",
     gallery: [
       {
-        src: "https://images.unsplash.com/photo-1554995207-c18c203602cb?w=2000&q=80",
+        src: "/projects/warehouse/02.jpg",
         ratio: "wide",
       },
       {
-        src: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=1200&q=80",
+        src: "/projects/warehouse/05.jpg",
         ratio: "portrait",
       },
       {
-        src: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=1200&q=80",
+        src: "/projects/warehouse/06.jpg",
         ratio: "portrait",
       },
     ],
@@ -152,6 +152,37 @@ export const projects: Project[] = [
       { role: "Architecture lead", name: "Kenji Arai" },
       { role: "Structural", name: "Silman" },
       { role: "Photography", name: "Naho Kubota" },
+    ],
+  },
+  {
+    slug: "echo",
+    title: "Echo Park House",
+    year: "2023",
+    type: "Residential",
+    location: "Los Angeles, California",
+    cover: "/projects/echo/01.jpg",
+    intro:
+      "A 1920s hillside bungalow reworked for a couple who wanted a calmer house, not a bigger one. Pale plaster, soft sage upholstery and deep-blue accents keep the rooms quiet.",
+    body: [
+      "The clients arrived with a long list of things they wanted to change. After three site visits the list shrank to a single idea: make the rooms feel the way the garden does in the early morning.",
+      "We opened the living room to the balcony, replaced the dated finishes with striped wallpaper and limed oak, and layered a small palette of sage, ink blue and brass through the furniture. Nothing in the room is loud, and nothing is accidental.",
+    ],
+    pullQuote: "I thought I knew what I wanted. They drew what I actually needed.",
+    gallery: [
+      { src: "/projects/echo/02.jpg", ratio: "portrait", caption: "Reading corner by the balcony." },
+      { src: "/projects/echo/03.jpg", ratio: "wide", caption: "Living room, afternoon." },
+    ],
+    specs: [
+      { label: "Client", value: "Private" },
+      { label: "Year", value: "2023" },
+      { label: "Built area", value: "2,100 sqft" },
+      { label: "Scope", value: "Interior · Furniture" },
+      { label: "Status", value: "Completed" },
+    ],
+    credits: [
+      { role: "Principal designer", name: "Noa Marlow" },
+      { role: "Interior lead", name: "Isobel Chen" },
+      { role: "Materials", name: "Sara Lindqvist" },
     ],
   },
 ];
