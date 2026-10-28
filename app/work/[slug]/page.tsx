@@ -24,6 +24,20 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
   if (!project) notFound();
   const { prev, next } = getAdjacentProjects(project.slug);
 
+  // pair consecutive portraits side by side: leaders render both, followers render nothing
+  const leaders = new Set<number>();
+  const followers = new Set<number>();
+  for (let i = 0; i < project.gallery.length - 1; i++) {
+    if (
+      project.gallery[i].ratio === "portrait" &&
+      project.gallery[i + 1].ratio === "portrait" &&
+      !followers.has(i)
+    ) {
+      leaders.add(i);
+      followers.add(i + 1);
+    }
+  }
+
   return (
     <>
       {/* TOP META */}
@@ -147,11 +161,9 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
           }
           // group consecutive portrait images side-by-side
           if (g.ratio === "portrait") {
-            const next = project.gallery[i + 1];
-            if (next?.ratio === "portrait" && i % 2 === 1) {
-              return null; // already handled by previous
-            }
-            if (next?.ratio === "portrait") {
+            if (followers.has(i)) return null; // already rendered beside the previous portrait
+            const next = leaders.has(i) ? project.gallery[i + 1] : undefined;
+            if (next) {
               return (
                 <Reveal key={i}>
                   <div className="grid-12 gap-y-8">

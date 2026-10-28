@@ -11,10 +11,6 @@ const projects = [
   { id: "skud", title: "Skud fra Studiet", year: "2024", type: "Studio", location: "Copenhagen, DK", img: "/projects/skud/01.jpg" },
   { id: "warehouse", title: "Baumiller's Warehouse", year: "2024", type: "Adaptive Reuse", location: "Brooklyn, NY", img: "/projects/warehouse/01.jpg" },
   { id: "echo", title: "Echo Park House", year: "2023", type: "Residential", location: "Los Angeles, CA", img: "/projects/echo/01.jpg" },
-  { id: "noma-flagship", title: "Noma Flagship", year: "2023", type: "Retail", location: "Tokyo, JP", img: "/projects/skud/03.jpg" },
-  { id: "lyd", title: "Lyddesign Loft", year: "2022", type: "Interior", location: "Aarhus, DK", img: "/projects/skud/05.jpg" },
-  { id: "highline", title: "Highline Pied-à-Terre", year: "2022", type: "Residential", location: "New York, NY", img: "/projects/warehouse/03.jpg" },
-  { id: "garden", title: "Glasshouse Garden", year: "2021", type: "Architecture", location: "Ojai, CA", img: "/projects/atherton/05.jpg" },
 ];
 
 type View = "list" | "grid";
@@ -25,7 +21,7 @@ export default function WorkPage() {
   const [hovered, setHovered] = useState<string | null>(null);
   const hoverRef = useRef<HTMLDivElement | null>(null);
 
-  const filters = ["All", "Residential", "Studio", "Retail", "Adaptive Reuse", "Architecture", "Interior"];
+  const filters = ["All", "Residential", "Studio", "Adaptive Reuse"];
   const visible = filter === "All" ? projects : projects.filter((p) => p.type === filter);
   const featured = projects[0];
 

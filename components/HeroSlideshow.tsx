@@ -15,7 +15,7 @@ type Slide = {
 
 const slides: Slide[] = [
   {
-    src: "/hero/01.jpg",
+    src: "/projects/atherton/01.jpg",
     title: "Atherton Pavilion",
     location: "Atherton, CA",
     year: "2025",
@@ -23,7 +23,7 @@ const slides: Slide[] = [
     href: "/work/atherton",
   },
   {
-    src: "/hero/02.jpg",
+    src: "/projects/skud/01.jpg",
     title: "Skud fra Studiet",
     location: "Copenhagen, DK",
     year: "2024",
@@ -31,7 +31,7 @@ const slides: Slide[] = [
     href: "/work/skud",
   },
   {
-    src: "/hero/03.jpg",
+    src: "/projects/warehouse/01.jpg",
     title: "Baumiller's Warehouse",
     location: "Brooklyn, NY",
     year: "2024",
@@ -39,12 +39,12 @@ const slides: Slide[] = [
     href: "/work/warehouse",
   },
   {
-    src: "/hero/04.jpg",
+    src: "/projects/echo/01.jpg",
     title: "Echo Park House",
     location: "Los Angeles, CA",
     year: "2023",
     tag: "Residential",
-    href: "/work/atherton",
+    href: "/work/echo",
   },
 ];
 

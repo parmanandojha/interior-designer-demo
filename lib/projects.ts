@@ -31,25 +31,10 @@ export const projects: Project[] = [
     pullQuote:
       "We didn't want the house to feel like an event. We wanted it to feel like the lot had always anticipated it.",
     gallery: [
-      {
-        src: "/projects/atherton/02.jpg",
-        ratio: "wide",
-        caption: "South elevation, evening light.",
-      },
-      {
-        src: "/projects/atherton/03.jpg",
-        ratio: "portrait",
-        caption: "Bronze stair detail.",
-      },
-      {
-        src: "/projects/atherton/04.jpg",
-        ratio: "portrait",
-      },
-      {
-        src: "/projects/atherton/05.jpg",
-        ratio: "wide",
-        caption: "Living pavilion, morning.",
-      },
+      { src: "/projects/atherton/02.jpg", ratio: "wide", caption: "South elevation, evening light." },
+      { src: "/projects/atherton/03.jpg", ratio: "portrait", caption: "Stair detail." },
+      { src: "/projects/atherton/04.jpg", ratio: "portrait" },
+      { src: "/projects/atherton/05.jpg", ratio: "wide", caption: "Living pavilion, morning." },
     ],
     specs: [
       { label: "Client", value: "Private" },
@@ -83,18 +68,10 @@ export const projects: Project[] = [
     ],
     pullQuote: "We left the brick alone. Then we built a quiet house inside it.",
     gallery: [
-      {
-        src: "/projects/skud/02.jpg",
-        ratio: "wide",
-      },
-      {
-        src: "/projects/skud/04.jpg",
-        ratio: "portrait",
-      },
-      {
-        src: "/projects/skud/06.jpg",
-        ratio: "portrait",
-      },
+      { src: "/projects/skud/02.jpg", ratio: "wide" },
+      { src: "/projects/skud/03.jpg", ratio: "portrait" },
+      { src: "/projects/skud/04.jpg", ratio: "portrait" },
+      { src: "/projects/skud/05.jpg", ratio: "wide" },
     ],
     specs: [
       { label: "Client", value: "Private artist" },
@@ -117,7 +94,7 @@ export const projects: Project[] = [
     year: "2024",
     type: "Adaptive Reuse",
     location: "Brooklyn, New York",
-    cover: "/projects/warehouse/05.jpg",
+    cover: "/projects/warehouse/01.jpg",
     intro:
       "A 1908 paint warehouse in Greenpoint converted into a single residence over two floors. The structure stays; everything else is new.",
     body: [
@@ -126,18 +103,12 @@ export const projects: Project[] = [
     ],
     pullQuote: "We added one stair. The building did the rest.",
     gallery: [
-      {
-        src: "/projects/warehouse/02.jpg",
-        ratio: "wide",
-      },
-      {
-        src: "/projects/warehouse/05.jpg",
-        ratio: "portrait",
-      },
-      {
-        src: "/projects/warehouse/06.jpg",
-        ratio: "portrait",
-      },
+      { src: "/projects/warehouse/02.jpg", ratio: "wide" },
+      { src: "/projects/warehouse/03.jpg", ratio: "wide" },
+      { src: "/projects/warehouse/05.jpg", ratio: "portrait" },
+      { src: "/projects/warehouse/06.jpg", ratio: "portrait" },
+      { src: "/projects/warehouse/04.jpg", ratio: "wide" },
+      { src: "/projects/warehouse/07.jpg", ratio: "wide" },
     ],
     specs: [
       { label: "Client", value: "Private" },
@@ -170,7 +141,11 @@ export const projects: Project[] = [
     pullQuote: "I thought I knew what I wanted. They drew what I actually needed.",
     gallery: [
       { src: "/projects/echo/02.jpg", ratio: "portrait", caption: "Reading corner by the balcony." },
-      { src: "/projects/echo/03.jpg", ratio: "wide", caption: "Living room, afternoon." },
+      { src: "/projects/echo/03.jpg", ratio: "portrait" },
+      { src: "/projects/echo/04.jpg", ratio: "wide", caption: "Entry hall." },
+      { src: "/projects/echo/05.jpg", ratio: "wide" },
+      { src: "/projects/echo/06.jpg", ratio: "portrait" },
+      { src: "/projects/echo/07.jpg", ratio: "portrait" },
     ],
     specs: [
       { label: "Client", value: "Private" },

@@ -157,7 +157,7 @@ export default function Home() {
             {[
               {
                 src: "https://cdn.coverr.co/videos/coverr-cozy-living-room-2018/1080p.mp4",
-                poster: "/hero/01.jpg",
+                poster: "/projects/atherton/01.jpg",
                 handle: "@elena.m",
                 project: "Atherton Pavilion",
                 duration: "01:48",
@@ -167,7 +167,7 @@ export default function Home() {
               },
               {
                 src: "https://cdn.coverr.co/videos/coverr-cozy-living-room-2018/1080p.mp4",
-                poster: "/hero/02.jpg",
+                poster: "/projects/skud/01.jpg",
                 handle: "@skudfrastudiet",
                 project: "Skud fra Studiet",
                 duration: "02:14",
@@ -177,7 +177,7 @@ export default function Home() {
               },
               {
                 src: "https://cdn.coverr.co/videos/coverr-cozy-living-room-2018/1080p.mp4",
-                poster: "/hero/03.jpg",
+                poster: "/projects/warehouse/01.jpg",
                 handle: "@baumiller",
                 project: "Baumiller's Warehouse",
                 duration: "03:02",
@@ -187,7 +187,7 @@ export default function Home() {
               },
               {
                 src: "https://cdn.coverr.co/videos/coverr-cozy-living-room-2018/1080p.mp4",
-                poster: "/hero/04.jpg",
+                poster: "/projects/echo/01.jpg",
                 handle: "@echo.park",
                 project: "Echo Park House",
                 duration: "01:35",
