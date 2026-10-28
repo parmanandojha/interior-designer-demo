@@ -193,7 +193,11 @@ export default function ChatBot() {
           </div>
 
           {/* Messages */}
-          <div ref={scrollRef} className="flex-1 space-y-3 overflow-y-auto px-4 py-4">
+          <div
+            ref={scrollRef}
+            data-lenis-prevent
+            className="flex-1 space-y-3 overflow-y-auto overscroll-contain px-4 py-4"
+          >
             {messages.map((m, i) => (
               <Bubble key={i} from={m.from}>
                 {m.text}
